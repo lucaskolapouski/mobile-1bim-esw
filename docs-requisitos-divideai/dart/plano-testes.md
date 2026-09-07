@@ -22,6 +22,8 @@ test/
 | T-P1-02 | Omitir `categoria` | `categoria == 'Geral'` |
 | T-P1-03 | Omitir `data` | `data` próximo de `DateTime.now()` (tolerância 1s) |
 | T-P1-04 | `ficha()` contém descrição e valor formatado | string não vazia |
+| T-P1-04b | Omitir `quantidade` | `quantidade == 1` (4º tipo `int`) |
+| T-P1-04c | Classe cobre ≥4 tipos | campos `String`, `int`, `double`, `DateTime` presentes |
 
 ```dart
 test('categoria default é Geral', () {

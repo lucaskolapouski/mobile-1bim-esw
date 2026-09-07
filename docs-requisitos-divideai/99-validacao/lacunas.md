@@ -10,6 +10,7 @@
 | L-06 | Reset / “nova conta” | Conflito com 6→7 | Extra; não substitui fluxo | Decidido |
 | L-07 | `valorParcela` vs `taxaJuros` | Modelagem | Escolher um e fixar na spec | Aberta |
 | L-08 | `DespesaParcelada` nos 6 itens da UI? | Demo herança | Opcional (1 de 6) | Aberta |
+| L-09 | ~~Despesa só 3 tipos (faltava `int`)~~ | Ex. 1 enunciado | Campo `quantidade` (`int`, default 1) | **Resolvida** |
 
 ## Código × docs
 

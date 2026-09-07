@@ -6,12 +6,15 @@ Documento canônico de assinaturas. Implementação em `parte1-dart/bin/models/`
 
 ## `Despesa` (Exercício 1)
 
+> **Ex. 1:** ≥4 tipos distintos — `String`, `int`, `double`, `DateTime` (enunciado).
+
 ```dart
 /// Item individual de gasto em uma divisão de conta.
 class Despesa {
   final String descricao;
   final double valor;
   final String pagador;
+  final int quantidade; // 4º tipo distinto
   final DateTime data;
   final String categoria;
 
@@ -19,6 +22,7 @@ class Despesa {
     required this.descricao,
     required this.valor,
     required this.pagador,
+    this.quantidade = 1,
     DateTime? data,
     this.categoria = 'Geral',
   }) : data = data ?? DateTime.now();
@@ -31,8 +35,8 @@ class Despesa {
 
   @override
   String toString() =>
-      'Despesa: $descricao | R\$ ${valor.toStringAsFixed(2)} | pago por $pagador | '
-      '${_formatarData(data)} | Categoria: $categoria';
+      'Despesa: $descricao | R\$ ${valor.toStringAsFixed(2)} | qtd $quantidade | '
+      'pago por $pagador | ${_formatarData(data)} | Categoria: $categoria';
 
   String _formatarData(DateTime d) =>
       '${d.day.toString().padLeft(2, '0')}/'
@@ -46,8 +50,11 @@ class Despesa {
 | descricao | String | sim | — |
 | valor | double | sim | — |
 | pagador | String | sim | — |
+| quantidade | int | não | 1 |
 | data | DateTime | não | now() |
 | categoria | String | não | 'Geral' |
+
+**Tipos:** String · int · double · DateTime ✓
 
 ---
 
@@ -62,6 +69,7 @@ class DespesaParcelada extends Despesa {
     required super.descricao,
     required super.valor,
     required super.pagador,
+    super.quantidade,
     super.data,
     super.categoria,
     required this.numeroParcelas,
@@ -146,6 +154,7 @@ classDiagram
         +String descricao
         +double valor
         +String pagador
+        +int quantidade
         +DateTime data
         +String categoria
         +ficha() String

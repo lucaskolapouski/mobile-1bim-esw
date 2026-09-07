@@ -24,7 +24,7 @@
 
 O objeto `Despesa` tocado é passado ao construtor. Validar tocando item do **meio** da lista (prova que não está fixo no código).
 
-Campos mínimos além do cartão: `data`, `categoria`.
+Campos mínimos além do cartão: `data`, `categoria` (e opcionalmente `quantidade`).
 
 **RF-EX-08:** push + `MaterialPageRoute` + construtor com `Despesa`.
 

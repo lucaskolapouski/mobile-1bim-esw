@@ -25,7 +25,7 @@ Cada fatia OO tem arquivo de teste. Falha de getter/herança/adicionar deve queb
 
 | Arquivo | Cobre |
 |---|---|
-| `test/despesa_test.dart` | construtor, default `categoria` |
+| `test/despesa_test.dart` | construtor, default `categoria`/`quantidade`, ≥4 tipos |
 | `test/despesa_parcelada_test.dart` | `ficha` diferente, `isA<Despesa>` |
 | `test/conta_compartilhada_test.dart` | `adicionar` +1 |
 | `test/encapsulamento_test.dart` | `totalGeral` / `valorPorPessoa` antes/depois |
@@ -44,4 +44,4 @@ Cada fatia OO tem arquivo de teste. Falha de getter/herança/adicionar deve queb
 
 - [ ] Quatro arquivos de teste presentes
 - [ ] `dart test` passa
-- [ ] Casos de default, herança, `adicionar`, totais cobertos
+- [ ] Casos de default (`categoria`, `quantidade`), 4 tipos, herança, `adicionar`, totais cobertos

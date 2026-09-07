@@ -2,10 +2,12 @@
 
 As classes em `lib/models/` são **cópia manual** da Parte 1. Especificação canônica: [`dart/especificacao-classes.md`](../dart/especificacao-classes.md).
 
+**Defaults automáticos no cadastro:** `quantidade = 1` (não precisa ser campo do form).
+
 ## Checklist de cópia
 
-- [ ] `despesa.dart` — idêntico à Parte 2 (prevalece sobre Parte 1 se divergir)
-- [ ] `despesa_parcelada.dart`
+- [ ] `despesa.dart` — inclui `quantidade` (`int`, default 1) + demais campos
+- [ ] `despesa_parcelada.dart` — repassa `super.quantidade` se usado
 - [ ] `conta_compartilhada.dart`
 - [ ] Imports ajustados (sem `package:parte1_dart/...` se existir)
 

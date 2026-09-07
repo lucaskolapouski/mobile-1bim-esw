@@ -21,6 +21,17 @@ Funcionalidade: Modelagem do domínio DivideAí em Dart puro
     Quando leio a categoria
     Então o valor é "Geral"
 
+  # CT-P1-02b — RF-EX-01
+  Cenário: Quantidade assume valor padrão 1 (tipo int — 4º tipo distinto)
+    Dado que crio uma Despesa sem informar quantidade
+    Quando leio a quantidade
+    Então o valor é 1
+
+  # CT-P1-02c — RF-EX-01
+  Cenário: Despesa possui pelo menos quatro tipos de atributo diferentes
+    Dado a classe Despesa
+    Então existem atributos dos tipos String, int, double e DateTime
+
   # CT-P1-03 — RF-EX-02
   Cenário: DespesaParcelada é uma Despesa
     Dado que crio uma DespesaParcelada válida

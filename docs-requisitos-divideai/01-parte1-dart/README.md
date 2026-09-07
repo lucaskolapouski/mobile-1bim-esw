@@ -82,7 +82,7 @@ Valores e nomes podem variar; a **estrutura** dos 4 blocos é obrigatória.
 
 | ID | Exercício | Descrição |
 |---|---|---|
-| RF-EX-01 | 1 | Classe `Despesa` com ≥4 atributos de tipos diferentes, construtor nomeado com `required` e opcionais com default |
+| RF-EX-01 | 1 | Classe `Despesa` com ≥4 **tipos** distintos (`String`, `int`, `double`, `DateTime`), construtor nomeado com `required` e opcionais com default (`quantidade=1`, `categoria='Geral'`) |
 | RF-EX-02 | 2 | `DespesaParcelada extends Despesa` com `super`, `@override` em `ficha()` |
 | RF-EX-03 | 3 | `ContaCompartilhada` com `List<Despesa>` e `adicionar()` |
 | RF-EX-04 | 4 | `_despesas` privada; getters `totalGeral` e `valorPorPessoa` calculados |

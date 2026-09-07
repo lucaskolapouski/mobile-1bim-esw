@@ -29,7 +29,7 @@
 | Valor | `TextEditingController` | `double.tryParse` (tratar falha) |
 | Pagador | `TextEditingController` | `String` |
 
-Defaults automáticos: `data = DateTime.now()`, `categoria = 'Geral'`.
+Defaults automáticos: `quantidade = 1`, `data = DateTime.now()`, `categoria = 'Geral'` (mantém ≤3 campos no form; o `int` da entidade fica no default).
 
 **RF-EX-09:** cada campo com **`TextEditingController`**; `InputDecoration` (rótulo, ícone, borda arredondada); Confirmar faz `Navigator.pop(context, despesa)`.
 

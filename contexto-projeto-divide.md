@@ -104,14 +104,15 @@ Nota final = média dos 10 exercícios × 1,9. Exercício não entregue = zero n
 ### Modelagem de domínio (obrigatória: composição entre item e agrupador)
 
 **Item individual (Exercício 1) → classe `Despesa`**
-Atributos obrigatórios (pelo menos 4 tipos diferentes):
+Atributos com **pelo menos 4 tipos diferentes** (exigência do enunciado: ex. String, int, double, DateTime):
 - `descricao` — `String` (ex.: "Pizza", "Uber", "Passagem de ônibus")
 - `valor` — `double`
 - `pagador` — `String` (quem adiantou o dinheiro)
+- `quantidade` — `int` (unidades do item; **opcional com default** `1`) — 4º tipo distinto
 - `data` — `DateTime`
 - `categoria` — `String`, **opcional com valor padrão** `'Geral'` (permite o app servir a qualquer nicho: restaurante, viagem, casa, compras)
 
-Construtor com **parâmetros nomeados**, `required` nos campos obrigatórios (`descricao`, `valor`, `pagador`), valor padrão em `categoria` e possivelmente `data` (`DateTime.now()`).
+Construtor com **parâmetros nomeados**, `required` nos campos obrigatórios (`descricao`, `valor`, `pagador`), valor padrão em `quantidade` (`1`), `categoria` e possivelmente `data` (`DateTime.now()`).
 
 **Especialização por herança (Exercício 2) → classe `DespesaParcelada extends Despesa`**
 - Acrescenta `numeroParcelas` (`int`) e `valorParcela` ou `taxaJuros` (`double`)
@@ -136,7 +137,7 @@ Na classe `ContaCompartilhada`:
 
 ```
 ===== [1] ENTIDADE PRINCIPAL =====
-Despesa: Pizza | R$ 45.00 | pago por Ana | 30/08/2026 | Categoria: Restaurante
+Despesa: Pizza | R$ 45.00 | qtd 1 | pago por Ana | 30/08/2026 | Categoria: Restaurante
 
 ===== [2] HERANÇA =====
 Despesa comum -> ficha: "Passagem de ônibus | R$ 120.00 | pago por Bruno"

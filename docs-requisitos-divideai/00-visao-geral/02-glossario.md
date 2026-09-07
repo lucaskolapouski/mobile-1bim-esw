@@ -3,7 +3,7 @@
 | Termo | Definição |
 |---|---|
 | **DivideAí** | Nome do app; divisor de despesas genérico ("rachar a conta") |
-| **Despesa** | Entidade principal; item individual de gasto (descrição, valor, pagador, data, categoria) |
+| **Despesa** | Entidade principal; item de gasto com ≥4 tipos (`String`, `int` quantidade, `double`, `DateTime` + categoria) |
 | **DespesaParcelada** | Subtipo de `Despesa` paga em parcelas; usa herança (`extends`) |
 | **ContaCompartilhada** | Agrupador que contém lista de despesas; usa composição ("tem um") |
 | **Bloco [N]** | Seção numerada do relatório impresso no terminal (Parte 1); N = 1..4 |

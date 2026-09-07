@@ -40,6 +40,7 @@ Requisitos do produto **DivideAí**: domínio Dart, app Flutter (3 telas) e back
 - [DOC-01 README/rastreio](99-validacao/doc-readme-rastreio.md) → DIV-17
 - [QA-01 Gate analyze](99-validacao/qa-gate-analyze.md) → DIV-18
 - [Checklist](99-validacao/checklist-entrega.md) · [Tabela modelo](99-validacao/tabela-rastreio-modelo.md)
+- [Compatibilidade enunciado Ex.1–10](99-validacao/compatibilidade-enunciado-427-572.md)
 
 ### Specs técnicas → [`docs-tecnicas/`](../docs-tecnicas/)
 - Dart: [arquitetura](dart/arquitetura.md) · [classes](dart/especificacao-classes.md) · [testes](dart/plano-testes.md)
