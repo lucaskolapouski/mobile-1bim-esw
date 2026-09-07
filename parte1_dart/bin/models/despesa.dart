@@ -4,6 +4,7 @@ class Despesa {
   final String pagador;
   final DateTime data;
   final String categoria;
+  final int quantidade;
 
   Despesa({
     required this.descricao,
@@ -11,6 +12,7 @@ class Despesa {
     required this.pagador,
     DateTime? data,
     this.categoria = 'Geral',
+    this.quantidade = 1,
   }) : data = data ?? DateTime.now();
 
   String ficha() {
@@ -19,7 +21,7 @@ class Despesa {
 
   @override
   String toString() {
-    return 'Despesa: $descricao | R\$ ${valor.toStringAsFixed(2)} | pago por $pagador | ${_formatarData(data)} | Categoria: $categoria';
+    return 'Despesa: $descricao | R\$ ${valor.toStringAsFixed(2)} | Quantidade: $quantidade | pago por $pagador | ${_formatarData(data)} | Categoria: $categoria';
   }
 
   String _formatarData(DateTime data) {
