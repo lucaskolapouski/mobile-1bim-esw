@@ -1,5 +1,11 @@
-import 'package:parte1_dart/parte1_dart.dart' as parte1_dart;
+import 'models/despesa.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${parte1_dart.calculate()}!');
+  
+  Despesa despesa = Despesa(descricao: "Pizza", valor: 60, pagador: "Gabriel", categoria: "Alimentação");
+  
+  print("");
+  print("===== [1] ENTIDADE PRINCIPAL =====");
+  print(despesa);
+  print("");
 }
