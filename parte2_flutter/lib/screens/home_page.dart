@@ -4,6 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import '../models/conta_compartilhada.dart';
 import '../models/conta_exemplo.dart';
 import '../theme/app_colors.dart';
+import '../widgets/cartao_despesa.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,21 +32,32 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('DivideAí'),
         centerTitle: true,
+        backgroundColor: AppColors.gray50,
       ),
-      backgroundColor: AppColors.surfaceSunken,
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _ResumoConta(conta: _conta),
-            const SizedBox(height: 16),
-            const Expanded(
-              child: Placeholder(),
+      backgroundColor: AppColors.gray50,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+            child: _ResumoConta(conta: _conta),
+          ),
+          Expanded(
+            child: Material(
+              color: AppColors.surfaceOverlay,
+              elevation: 4,
+              shadowColor: AppColors.shadow.withValues(alpha: 0.18),
+              child: ListView.builder(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+                itemCount: _conta.despesas.length,
+                itemBuilder: (context, index) {
+                  final despesa = _conta.despesas[index];
+                  return CartaoDespesa(despesa: despesa);
+                },
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -60,14 +72,9 @@ class _ResumoConta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    // Mesmo espaço interno do antigo card (sem fundo/sombra).
+    return Padding(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.surfaceCard,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: AppColors.elevation2(),
-        border: Border.all(color: AppColors.gray100),
-      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

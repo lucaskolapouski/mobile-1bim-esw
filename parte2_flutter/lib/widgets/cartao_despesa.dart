@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/despesa.dart';
+import '../theme/app_colors.dart';
 
 class CartaoDespesa extends StatelessWidget {
   final Despesa despesa;
@@ -15,15 +16,9 @@ class CartaoDespesa extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerLow,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
+        boxShadow: AppColors.elevation1(),
       ),
       child: Material(
         color: Colors.transparent,
@@ -50,14 +45,14 @@ class CartaoDespesa extends StatelessWidget {
                           Icon(
                             Icons.person_outline,
                             size: 16,
-                            color: theme.colorScheme.onSurfaceVariant,
+                            color: AppColors.textSecondary,
                           ),
                           const SizedBox(width: 6),
                           Expanded(
                             child: Text(
                               'pago por ${despesa.pagador}',
                               style: theme.textTheme.bodyMedium?.copyWith(
-                                color: theme.colorScheme.onSurfaceVariant,
+                                color: AppColors.textSecondary,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -72,7 +67,7 @@ class CartaoDespesa extends StatelessWidget {
                 Text(
                   _formatarMoeda(despesa.valor),
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.colorScheme.primary,
+                    color: AppColors.navy,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
