@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/conta_compartilhada.dart';
 import '../models/conta_exemplo.dart';
+import '../widgets/cartao_despesa.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,7 +32,13 @@ class _HomePageState extends State<HomePage> {
             _ResumoConta(conta: _conta),
             const SizedBox(height: 16),
             Expanded(
-              child: Placeholder()
+              child: ListView.builder(
+                itemCount: _conta.despesas.length,
+                itemBuilder: (context, index) {
+                  final despesa = _conta.despesas[index];
+                  return CartaoDespesa(despesa: despesa);
+                },
+              ),
             ),
           ],
         ),
