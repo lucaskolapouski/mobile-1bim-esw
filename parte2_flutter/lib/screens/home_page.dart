@@ -52,6 +52,7 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(

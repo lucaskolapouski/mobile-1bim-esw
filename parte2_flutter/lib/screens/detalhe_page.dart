@@ -4,7 +4,7 @@ import '../models/despesa.dart';
 import '../theme/app_colors.dart';
 
 /// Tela de detalhe — Exercício 8 / DETAIL-01.
-/// Recebe a [Despesa] tocada pelo construtor (não fixa no código).
+/// Recebe a [Despesa] tocada pelo construtor.
 class DetalhePage extends StatelessWidget {
   final Despesa despesa;
 
