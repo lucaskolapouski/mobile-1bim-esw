@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../models/conta_compartilhada.dart';
 import '../models/conta_exemplo.dart';
+import '../theme/app_colors.dart';
 import '../widgets/cartao_despesa.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,11 +20,20 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _conta = ContaCompartilhadaExemplo.criar();
+    // Remove a splash nativa assim que a lista está pronta (não é 4ª tela).
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      FlutterNativeSplash.remove();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('DivideAí'),
+        centerTitle: true,
+      ),
+      backgroundColor: AppColors.surfaceSunken,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -56,13 +67,13 @@ class _ResumoConta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerHighest,
+        color: AppColors.surfaceCard,
         borderRadius: BorderRadius.circular(16),
+        boxShadow: AppColors.elevation2(),
+        border: Border.all(color: AppColors.gray100),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
