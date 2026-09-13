@@ -5,6 +5,7 @@ import '../models/conta_compartilhada.dart';
 import '../models/conta_exemplo.dart';
 import '../theme/app_colors.dart';
 import '../widgets/cartao_despesa.dart';
+import 'detalhe_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,7 +53,16 @@ class _HomePageState extends State<HomePage> {
                 itemCount: _conta.despesas.length,
                 itemBuilder: (context, index) {
                   final despesa = _conta.despesas[index];
-                  return CartaoDespesa(despesa: despesa);
+                  return CartaoDespesa(
+                    despesa: despesa,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => DetalhePage(despesa: despesa),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             ),
