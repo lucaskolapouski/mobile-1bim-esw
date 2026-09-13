@@ -3,8 +3,10 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../models/conta_compartilhada.dart';
 import '../models/conta_exemplo.dart';
+import '../models/despesa.dart';
 import '../theme/app_colors.dart';
 import '../widgets/cartao_despesa.dart';
+import 'cadastro_page.dart';
 import 'detalhe_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,6 +29,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> _abrirCadastro() async {
+    final nova = await Navigator.of(context).push<Despesa>(
+      MaterialPageRoute(builder: (_) => const CadastroPage()),
+    );
+    if (nova == null) return;
+    setState(() => _conta.adicionar(nova));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +46,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: AppColors.gray50,
       ),
       backgroundColor: AppColors.gray50,
+      floatingActionButton: FloatingActionButton(
+        onPressed: _abrirCadastro,
+        tooltip: 'Nova despesa',
+        child: const Icon(Icons.add),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
